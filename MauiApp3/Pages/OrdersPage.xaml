@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="MauiApp3.Pages.OrdersPage"
+             Title="Zamówienia">
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="15">
+            <!-- Formularz zamówienia -->
+            <Entry
+            x:Name="productEntry"
+            Placeholder="Nazwa produktu" />
+
+            <Entry
+            x:Name="quantityEntry"
+            Placeholder="Ilość"
+            Keyboard="Numeric" />
+
+            <Picker
+            x:Name="priorityPicker"
+            Title="Priorytet">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Normalny</x:String>
+                        <x:String>Wysoki</x:String>
+                        <x:String>Niski</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <DatePicker
+            x:Name="datePicker"
+            Date="{x:Static sys:DateTime.Today}" />
+
+            <Button
+            Text="Złóż zamówienie"
+            Clicked="OnOrderButtonClicked" />
+
+            <Button
+            Text="Pokaż historię (z pliku)"
+            Clicked="OnShowHistoryClicked" />
+
+            <Button
+            Text="Udostępnij historię"
+            Clicked="OnShareHistoryClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

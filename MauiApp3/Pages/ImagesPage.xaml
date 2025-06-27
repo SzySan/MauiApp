@@ -1,0 +1,31 @@
+<ContentPage 
+    x:Class="MauiApp3.Pages.ImagesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Image Gallery">
+
+    <VerticalStackLayout Padding="10">
+        <Button 
+      Text="Upload Image..."
+      Clicked="OnUploadButtonClicked"
+      Margin="0,0,0,10" />
+
+        <CollectionView 
+      ItemsSource="{Binding ImageUrls}"
+      EmptyView="Brak obrazów">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="4" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="0" HasShadow="False" Margin="5">
+                        <Image 
+              Source="{Binding .}" 
+              Aspect="AspectFill" 
+              HeightRequest="150" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

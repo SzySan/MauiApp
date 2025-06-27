@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiApp3.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp3">
+
+    <TabBar>
+
+        <ShellContent
+        Title="Oferta"
+        Icon="icon_offers.png"
+        ContentTemplate="{DataTemplate pages:OffersPage}" />
+
+        <ShellContent
+        Title="Zamówienia"
+        Icon="icon_orders.png"
+        ContentTemplate="{DataTemplate pages:OrdersPage}" />
+
+        <ShellContent
+        Title="Galeria"
+        Icon="icon_images.png"
+        ContentTemplate="{DataTemplate pages:ImagesPage}" />
+
+    </TabBar>
+
+</Shell>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp3.Pages.OffersPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Oferta">
+
+    <!-- Używamy stylów i szablonów zdefiniowanych w App.xaml -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ProductTemplate">
+                <Frame>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                 Tapped="OnOfferTapped"
+                 CommandParameter="{Binding .}" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label Text="{Binding Name}" Style="{StaticResource HeaderLabel}" />
+                        <Label Text="{Binding Price, StringFormat='Cena: {0:C}'}"
+    FontSize="14"
+    TextColor="{StaticResource AccentColor}" />
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </ResourceDictionary>
+        <!-- Brak zasobów lokalnych, korzystamy z ResourceDictionary w App.xaml -->
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10" Spacing="10">
+
+        <!-- SearchBar do filtrowania produktów -->
+        <SearchBar
+      x:Name="searchBar"
+      Placeholder="Wyszukaj produkt…"
+      TextChanged="OnSearchBarTextChanged" />
+
+        <!-- CollectionView korzysta z ProductTemplate z App.xaml -->
+        <CollectionView
+      x:Name="offersCollectionView"
+      ItemsSource="{Binding FilteredOffers}"
+      ItemTemplate="{StaticResource ProductTemplate}" />
+
+    </StackLayout>
+
+</ContentPage>
