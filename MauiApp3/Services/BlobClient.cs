@@ -24,7 +24,7 @@ namespace MauiApp3.Services
 
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
 
-            const string functionKey = "https://mauiapp3-funcmauiapp3-func-gkc3byfng3axcnc5.westeurope-01.azurewebsites.net/api/images/{name}?code=99-QwPzr6Mbogfg--6z0oMThuGlh2wlyobjEvmbAbHPBAzFuwrkWbA==";
+            const string functionKey = "??";
 
             var target = $"images/{name}?code={Uri.EscapeDataString(functionKey)}";
 
