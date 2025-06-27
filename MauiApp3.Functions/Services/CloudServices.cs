@@ -11,7 +11,7 @@ namespace MauiApp3.Functions.Services
     {
         // Podmień na swoje wartości z Azure Portal:
         private const string EndpointUri = "https://mauiapp3.documents.azure.com:443/";
-        private const string PrimaryKey = "JlDOuAKIu2mNnoaDAS2ilcoIZUgmYI2CG2RCVt6Lxj64ie69JyAFvT6zSj8sXDFkW6tDR6BdyrwSACDbHVUL8w==";
+        private const string PrimaryKey = "??";
         private const string DatabaseId = "mauiapp3";
         private const string ProductsContainerId = "Products";
         private const string OrdersContainerId = "Orders";
